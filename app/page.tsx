@@ -141,7 +141,7 @@ export default function GuardianCalculator() {
           Vicky Andhika &copy; 2025
         </p>
         <p className="text-slate-600 text-[9px] mt-1">
-          Projectronic.net - Built with Next.js & Tailwind CSS
+          Projectronic.net - we all have busy minds, mine is to create.
         </p>
       </footer>
     </main>
