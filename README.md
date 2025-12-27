@@ -4,6 +4,9 @@ Aplikasi web sederhana untuk membantu pemain game **What the Luck** menghitung k
 
 🌐 **Live Demo:** [whattheluck.projectronic.net](https://whattheluck.projectronic.net)
 
+sumber referensi https://luckydefenseguides.com/
+
+
 ## 🚀 Fitur Saat Ini
 - **Kalkulator Dinamis**: Pilih level saat ini dan target level untuk melihat total biaya.
 - **Tabel Referensi**: Daftar lengkap biaya upgrade per level beserta akumulasinya.
