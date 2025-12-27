@@ -37,9 +37,13 @@ const PET_DATA = {
     { name: "Wooroo", special: "Chance to obtain luck stone each wave" },
     { name: "Drago", special: "Increase CRIT Rate" },
     { name: "Ghostboogie", special: "Bonus Coins on sell" },
+
+  ],
+  Immortal: [
     { name: "Poseidon", special: "Increase DMG upon attacking Boss units" },
     { name: "PartyCat", special: "Increase Final DMG & CRIT DMG" },
   ]
+
 };
 
 const PET_THEMES: any = {
@@ -48,6 +52,7 @@ const PET_THEMES: any = {
   Epic: { color: "text-purple-400", border: "border-purple-500/30", bg: "bg-purple-500/5", glow: "shadow-purple-500/10" },
   Legendary: { color: "text-orange-400", border: "border-orange-500/30", bg: "bg-orange-500/5", glow: "shadow-orange-500/10" },
   Mythic: { color: "text-yellow-500", border: "border-yellow-500/30", bg: "bg-yellow-500/5", glow: "shadow-yellow-500/10" },
+  Immortal: { color: "text-red-500", border: "border-red-500/30", bg: "bg-red-500/5", glow: "shadow-red-500/10" },
 };
 
 export default function PetLibrary() {
