@@ -4,7 +4,7 @@ Aplikasi web sederhana untuk membantu pemain game **What the Luck** menghitung k
 
 🌐 **Live Demo:** [whattheluck.projectronic.net](https://whattheluck.projectronic.net)
 
-sumber referensi https://luckydefenseguides.com/
+sumber referensi https://luckydefenseguides.com/ dan @Klebermas dari https://discord.gg/luckydefense
 
 
 ## 🚀 Fitur Saat Ini

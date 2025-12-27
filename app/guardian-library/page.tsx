@@ -14,20 +14,20 @@ const GUARDIAN_DATA = {
     "Sheriff.png", "Storm Giant.png", "Tiger Master.png", "War Machine.png"
   ],
   mythic: [
-    "Bat Man.png", "Blob.png", "Bomba.png", "Coldy.png", "Dragon.png", "Frog Prince.png", 
-    "Graviton.png", "Indy.png", "Iron Meow.png", "Kitty Mage.png", "Lancelot.png", 
+    "Bat Man.png", "Blob.png", "Bomba.png", "Coldy.png", "Dragon - 0 Egg.png", "Dragon - 1 Dragon.png", 
+    "Dragon - 2 The Great Egg.png", "Dragon - 3 Drain.png", "Frog Prince - 0.png", "Frog Prince - King Dian.png",
+    "Graviton.png", "Indy.png", "Iron Meow .png", "Iron Meow v1.png", "Iron Meow v2.png", "Kitty Mage.png", "Lancelot.png", 
     "Lazy Taoist.png", "Mama.png", "Master Kun.png", "Monopoly Man.png", "Ninja.png", 
-    "Orc Shaman.png", "Penguin Musician.png", "Pulse Generator.png", "Rocket Chu.png", 
-    "Tar.png", "Vayne.png", "Verdee.png", "Watt.png", "Zap.png",
-    // Gambar yang belum ada (tanpa .png untuk logika pengecekan)
-    "Hailey", "Ato", "Birdraw", "Roka"
+    "Orc Shaman.png", "Penguin Musician.png", "Pulse Generator.png", "Rocket Chu.png", "Rocket Chu - Overclock.png", 
+    "Tar .png", "Tar 1.png", "Tar 2.png", "Vayne.png", "Verdee.png", "Watt.png", "Zap.png",
+    "Hailey.png", "Ato.png", "Birdraw.png", "Roka.png"
   ],
   immortal: [
     "Awakened Hailey.png", "Chrono Ato.png", "Ghost Ninja.png", "Grand Mama.png", 
     "Primeval Bomba.png", "Reaper Dian.png", "Reaper Frog.png",
-    // Gambar yang belum ada
-    "Boss Bird", "I Am Meow", "Noisy Penguin Musician", "Ace Bat Man", 
-    "Captain Roka", "Super Graviton", "Dark Lord Dragon", "Top Vayne", "Dr Pulse"
+    "I Am Meow.png", "Ace Bat Man.png", "Dark Lord Dragon.png",
+    "Boss Birdraw.png", "Noisy Penguin Musician.png",  
+    "Captain Roka.png", "Super Graviton.png",  "Top Vayne.png", "Dr Pulse.png"
   ]
 };
 
