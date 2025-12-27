@@ -160,14 +160,7 @@ export default function GuardianCalculator() {
       </div>
 
       {/* FOOTER COPYRIGHT */}
-      <footer className="mt-12 py-8 border-t border-slate-800 text-center space-y-2">
-        <p className="text-slate-400 text-sm font-semibold tracking-wide">
-          Vicky Andhika &copy; 2025
-        </p>
-        <p className="text-slate-500 text-[11px] italic max-w-xs mx-auto leading-relaxed">
-          projectronic.net - we all have busy minds, mine is to create.
-        </p>
-      </footer>
+
     </main>
   );
 }
