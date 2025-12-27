@@ -1,65 +1,85 @@
-import Image from "next/image";
+"use client";
+import React, { useState } from 'react';
 
-export default function Home() {
+const upgradeData = [
+  { lv: 1, stones: 5, gold: 1000 }, { lv: 2, stones: 10, gold: 2000 },
+  { lv: 3, stones: 20, gold: 4000 }, { lv: 4, stones: 30, gold: 6000 },
+  { lv: 5, stones: 50, gold: 10000 }, { lv: 6, stones: 70, gold: 14000 },
+  { lv: 7, stones: 100, gold: 20000 }, { lv: 8, stones: 130, gold: 26000 },
+  { lv: 9, stones: 170, gold: 34000 }, { lv: 10, stones: 210, gold: 42000 },
+  { lv: 11, stones: 260, gold: 52000 }, { lv: 12, stones: 310, gold: 62000 },
+  { lv: 13, stones: 360, gold: 72000 }, { lv: 14, stones: 430, gold: 86000 }
+];
+
+export default function GuardianCalculator() {
+  const [currentLv, setCurrentLv] = useState(1);
+  const [targetLv, setTargetLv] = useState(2);
+
+  const calculateTotal = () => {
+    let totalStones = 0;
+    let totalGold = 0;
+    upgradeData.forEach((item) => {
+      if (item.lv >= currentLv && item.lv < targetLv) {
+        totalStones += item.stones;
+        totalGold += item.gold;
+      }
+    });
+    return { totalStones, totalGold };
+  };
+
+  const { totalStones, totalGold } = calculateTotal();
+
   return (
-    <div className="flex min-h-screen items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex min-h-screen w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
+    <main className="min-h-screen flex items-center justify-center bg-slate-900 text-white p-4">
+      <div className="w-full max-w-md bg-slate-800 rounded-2xl shadow-2xl border border-yellow-500/30 overflow-hidden">
+        <div className="bg-yellow-600 p-4 text-center">
+          <h1 className="text-xl font-bold uppercase tracking-wider">What the Luck</h1>
+          <p className="text-xs opacity-80">Guardian Upgrade Calculator</p>
         </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
+        
+        <div className="p-6 space-y-6">
+          <div className="grid grid-cols-2 gap-4">
+            <div>
+              <label className="block text-xs text-slate-400 mb-2 uppercase font-bold">Current Level</label>
+              <select 
+                value={currentLv}
+                onChange={(e) => setCurrentLv(Number(e.target.value))}
+                className="w-full bg-slate-700 border border-slate-600 p-3 rounded-lg focus:outline-none focus:border-yellow-500"
+              >
+                {Array.from({ length: 14 }, (_, i) => i + 1).map(lv => (
+                  <option key={lv} value={lv}>Level {lv}</option>
+                ))}
+              </select>
+            </div>
+            <div>
+              <label className="block text-xs text-slate-400 mb-2 uppercase font-bold">Target Level</label>
+              <select 
+                value={targetLv}
+                onChange={(e) => setTargetLv(Math.max(Number(e.target.value), currentLv + 1))}
+                className="w-full bg-slate-700 border border-slate-600 p-3 rounded-lg focus:outline-none focus:border-yellow-500"
+              >
+                {Array.from({ length: 14 }, (_, i) => i + 2).map(lv => (
+                  <option key={lv} value={lv}>Level {lv}</option>
+                ))}
+              </select>
+            </div>
+          </div>
+
+          <div className="space-y-3 pt-4 border-t border-slate-700">
+            <div className="flex justify-between items-center">
+              <span className="text-slate-300">Total Mythic Stones</span>
+              <span className="text-xl font-mono font-bold text-blue-400">{totalStones.toLocaleString()}</span>
+            </div>
+            <div className="flex justify-between items-center">
+              <span className="text-slate-300">Total Gold Needed</span>
+              <span className="text-xl font-mono font-bold text-yellow-500">{totalGold.toLocaleString()}</span>
+            </div>
+          </div>
         </div>
-      </main>
-    </div>
+        <div className="p-4 bg-slate-800/50 text-center border-t border-slate-700">
+          <p className="text-[10px] text-slate-500">Projectronic.net - Guardian Library Coming Soon</p>
+        </div>
+      </div>
+    </main>
   );
 }
