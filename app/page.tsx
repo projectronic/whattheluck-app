@@ -32,7 +32,8 @@ const Counter = ({ value }: { value: number }) => {
 // --- 2. DATA MASTER ---
 const GUARDIAN_IMAGES = {
   common: ["Archer.png", "Bandit.png", "Barbarian.png", "Thrower.png", "Water Elemental.png"],
-  rare: ["Wolf Warrior.png", "Demon Soldier.png", "Eagle General.png", "Electro Robot.png", "Hunter.png", "Paladin.png", "Ranger.png", "Sandman.png", "Shock Robot.png", "Tree.png"],
+  rare: ["Demon Soldier.png", "Shock Robot.png", "Paladin.png", "Ranger.png", "Sandman.png"],
+  epic: ["Tree.png", "Wolf Warrior.png", "Eagle General.png", "Electro Robot.png", "Hunter.png"],
   legendary: ["War Machine.png", "Sheriff.png", "Storm Giant.png", "Tiger Master.png"],
   mythic: ["Zap.png", "Bat Man.png", "Blob.png", "Bomba.png", "Coldy.png", "Dragon.png", "Frog Prince.png", "Graviton.png", "Indy.png", "Iron Meow.png", "Kitty Mage.png", "Lancelot.png", "Lazy Taoist.png", "Mama.png", "Master Kun.png", "Monopoly Man.png", "Ninja.png", "Orc Shaman.png", "Penguin Musician.png", "Pulse Generator.png", "Rocket Chu.png", "Tar.png", "Vayne.png", "Verdee.png", "Watt.png"],
   immortal: ["Reaper Frog.png", "Awakened Hailey.png", "Chrono Ato.png", "Ghost Ninja.png", "Grand Mama.png", "Primeval Bomba.png", "Reaper Dian.png"]
@@ -56,6 +57,15 @@ const UPGRADE_DATA_MAP = {
     { lv: 9, next: 10, item: 100, gold: 28000 }, { lv: 10, next: 11, item: 130, gold: 35000 },
     { lv: 11, next: 12, item: 160, gold: 43000 }, { lv: 12, next: 13, item: 190, gold: 52000 },
     { lv: 13, next: 14, item: 220, gold: 60000 }, { lv: 14, next: 15, item: 260, gold: 72000 }
+  ],
+  epic: [
+    { lv: 1, next: 2, item: 3, gold: 1000 }, { lv: 2, next: 3, item: 4, gold: 2000 },
+    { lv: 3, next: 4, item: 8, gold: 4000 }, { lv: 4, next: 5, item: 12, gold: 6000 },
+    { lv: 5, next: 6, item: 20, gold: 10000 }, { lv: 6, next: 7, item: 30, gold: 14000 },
+    { lv: 7, next: 8, item: 40, gold: 20000 }, { lv: 8, next: 9, item: 50, gold: 26000 },
+    { lv: 9, next: 10, item: 70, gold: 34000 }, { lv: 10, next: 11, item: 85, gold: 42000 },
+    { lv: 11, next: 12, item: 105, gold: 52000 }, { lv: 12, next: 13, item: 125, gold: 62000 },
+    { lv: 13, next: 14, item: 145, gold: 72000 }, { lv: 14, next: 15, item: 170, gold: 86000 }
   ],
   legendary: [
     { lv: 1, next: 2, item: 2, gold: 1000 }, { lv: 2, next: 3, item: 3, gold: 2000 },
@@ -89,7 +99,8 @@ const UPGRADE_DATA_MAP = {
 const RARITY_CONFIG: any = {
   common: { name: 'Common', currency: 'Card', color: 'text-slate-400', border: 'border-slate-500', bg: 'bg-slate-500/10' },
   rare: { name: 'Rare', currency: 'Card', color: 'text-blue-400', border: 'border-blue-500', bg: 'bg-blue-500/10' },
-  legendary: { name: 'Legendary', currency: 'Card', color: 'text-purple-400', border: 'border-purple-500', bg: 'bg-purple-500/10' },
+  epic: { name: 'Epic', currency: 'Card', color: 'text-purple-500', border: 'border-purple-500', bg: 'bg-purple-500/10' },
+  legendary: { name: 'Legendary', currency: 'Card', color: 'text-orange-500', border: 'border-orange-500', bg: 'bg-orange-500/10' },
   mythic: { name: 'Mythic', currency: 'Mythic Stones', color: 'text-yellow-500', border: 'border-yellow-500', bg: 'bg-yellow-500/10' },
   immortal: { name: 'Immortal', currency: 'Immortal Stones', color: 'text-red-500', border: 'border-red-500', bg: 'bg-red-500/10' }
 };
@@ -135,7 +146,6 @@ export default function GuardianCalculator() {
 
   const { totalItem, totalGold, tableData } = getCalculatedData();
 
-  // Helper untuk Ikon Target Level
   const getLevelIcon = (lv: number) => {
     if ([6, 9, 12, 15].includes(lv)) return "⭐";
     return null;
