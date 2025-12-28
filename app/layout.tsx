@@ -3,9 +3,16 @@ import "./globals.css";
 import Navbar from "./components/Navbar";
 
 export const metadata: Metadata = {
-  title: "What the Luck - Guardian Calculator",
-  description: "Calculate your Guardian upgrade costs in What the Luck game",
-};
+  title: 'What the Luck - Library & Upgrade Calculator',
+  description: 'Complete library for What The Luck game, mythic combnation, skill levels, and upgrade calculator.',
+  keywords: ['What The Luck', 'Guardian Library', 'Mythic Recipe', 'Game Guide', 'Wiki'],
+  openGraph: {
+    title: 'Guardian Library - What The Luck',
+    description: 'Cek resep kombinasi Mythic dan Immortal Guardian di sini!',
+    images: ['/img/og-image.png'], // Gambar yang muncul saat link di-share
+  },
+}
+
 
 export default function RootLayout({
   children,
